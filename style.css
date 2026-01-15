@@ -1,0 +1,337 @@
+:root{
+    --pink:#ff4fd8;
+    --hot:#ff00aa;
+    --black:#0a0a0a;
+    --gray:#1a1a1a;
+    --line:#ff7be6;
+    --white:#fff;
+  }
+  
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  
+  body{
+    margin: 0;
+    font-family: "VT323", system-ui, sans-serif;
+    color: #fff;
+  
+    background-image: url("assets/kuromi.jpg");
+    background-repeat: repeat;       
+    background-position: top left;
+    background-attachment: fixed;    
+  }
+
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  
+    background-image: url("assets/snow_bg.gif");
+    background-repeat: repeat;
+  
+    opacity: 0.2;            
+    mix-blend-mode: screen; /* glitter glow */
+  }
+  
+  .wrap{
+    position: relative;
+    z-index: 1;
+  }
+  
+  a{ color:#a7e6ff; text-decoration:none; }
+  a:hover{ text-decoration:underline; }
+  
+  .topbar{
+    background: linear-gradient(#111, #000);
+    border-bottom: 2px solid var(--line);
+    padding: 10px 12px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .brand{
+    font-size: 22px;
+    text-shadow: 0 0 10px var(--hot);
+  }
+  
+  .links{
+    margin-top:6px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:18px;
+    align-items:center;
+  }
+  .links .right{ margin-left:auto; opacity:.85; }
+  
+  .wrap{
+    max-width: 980px;
+    margin: 18px auto 60px;
+    padding: 0 12px;
+  }
+  
+  .header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  
+  h1{
+    margin: 0;
+    font-size: 56px;
+    text-shadow: 0 0 8px var(--hot), 2px 2px 0 #000;
+  }
+  
+  .sparkle{
+    color: var(--pink);
+    text-shadow: 0 0 12px var(--hot), 3px 3px 0 #000;
+  }
+  
+  .status{
+    background: linear-gradient(90deg, #ff2fc9, #8f00ff);
+    border: 2px solid #000;
+    padding: 10px 12px;
+    font-size: 20px;
+    box-shadow: 0 0 0 2px var(--line);
+  }
+  
+  .grid{
+    display:grid;
+    grid-template-columns: 330px 1fr;
+    gap: 14px;
+  }
+  
+  .card{
+    background: rgba(0,0,0,.75);
+    border: 2px solid #000;
+    box-shadow: 0 0 0 2px var(--line), 0 0 25px rgba(255,0,170,.25);
+  }
+  
+  .profile{ padding: 10px; }
+  .content{ padding: 10px; }
+  
+  .profileTop{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  
+  .pfp{
+    width: 135px;
+    height: 165px;
+    object-fit: cover;
+    border: 2px solid #000;
+    box-shadow: 0 0 0 2px var(--hot);
+    filter: contrast(1.15) saturate(1.4);
+  }
+  
+  .badge .name{
+    font-size: 36px;
+    color: var(--pink);
+    text-shadow: 0 0 10px var(--hot);
+    margin-bottom: 6px;
+  }
+  .meta{
+    font-size: 18px;
+    line-height: 1.05;
+    opacity: .95;
+  }
+  .hot{ color: var(--pink); }
+  
+  .panel{
+    margin-top: 10px;
+    border: 2px solid #000;
+    box-shadow: 0 0 0 2px rgba(255,123,230,.6);
+    background: rgba(20,0,18,.6);
+  }
+  
+  .panelTitle{
+    font-size: 24px;
+    padding: 8px 10px;
+    background: linear-gradient(90deg, #ff2fc9, #8f00ff);
+    border-bottom: 2px solid #000;
+    text-shadow: 2px 2px 0 #000;
+  }
+  
+  .subTitle{
+    padding: 8px 10px 0;
+    font-size: 22px;
+    color: #ffd1f5;
+  }
+  
+  .blurb{
+    padding: 8px 10px 12px;
+    font-size: 20px;
+    line-height: 1.15;
+  }
+  
+  .btnRow{
+    padding: 10px;
+    display:flex;
+    gap: 8px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    cursor:pointer;
+    font-family: inherit;
+    font-size: 18px;
+    padding: 8px 10px;
+    border: 2px solid #000;
+    background: linear-gradient(#ff4fd8,#b000ff);
+    color:#fff;
+    text-shadow: 2px 2px 0 #000;
+    box-shadow: 0 0 0 2px rgba(255,123,230,.6);
+  }
+  .btn:active{ transform: translateY(1px); }
+  
+  .urlBox{
+    padding: 10px;
+    font-size: 18px;
+    background: rgba(0,0,0,.5);
+  }
+  
+  .small{
+    padding: 10px 10px 0;
+    margin: 0;
+    font-size: 18px;
+    opacity:.9;
+  }
+  
+  .blogList{
+    list-style:none;
+    margin:0;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .blogList li{ padding: 4px 0; }
+  
+  .friends{
+    padding: 10px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .friend{
+    border: 2px solid #000;
+    background: rgba(0,0,0,.4);
+    padding: 8px;
+    text-align:center;
+    box-shadow: 0 0 0 2px rgba(255,123,230,.5);
+  }
+  .friend img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid #000;
+  }
+  .friend video{
+  width: 100%;
+  height: 80%;
+  object-fit: cover;    
+  display: block;
+  border: 2px solid #000;
+}
+
+  .friendName{
+    margin-top: 6px;
+    font-size: 20px;
+    color: #a7e6ff;
+  }
+  
+  .guestbook{
+    padding: 10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .gbMsg{
+    border: 2px dashed var(--line);
+    padding: 10px;
+    background: rgba(0,0,0,.4);
+  }
+  .gbName{ font-size: 22px; color: var(--pink); }
+  .gbText{ font-size: 20px; }
+  
+  .footer{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px;
+    opacity: .9;
+    text-align:center;
+  }
+  
+  /* classic blink effect */
+  .blink{
+    animation: blink 1s steps(1,end) infinite;
+  }
+  @keyframes blink{
+    50%{ opacity:0; }
+  }
+  
+  /* responsive so it doesnt look weird when cropped!!! */
+  @media (max-width: 860px){
+    .grid{ grid-template-columns: 1fr; }
+    .links .right{ margin-left: 0; }
+  }
+
+  /* Custom 2000s-style mini player */
+.player{
+  margin: 10px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: linear-gradient(#2b0030, #0b0010);
+  border: 2px solid #000;
+  box-shadow: 0 0 0 2px rgba(255,123,230,.6), inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.pbtn, .mbtn{
+  width: 44px;
+  height: 34px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+
+  color: #fff;
+  background: linear-gradient(#ff4fd8,#8f00ff);
+  border: 2px solid #000;
+  text-shadow: 2px 2px 0 #000;
+  box-shadow: 0 0 0 2px rgba(255,123,230,.4);
+}
+
+.track{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar{
+  height: 14px;
+  background: rgba(0,0,0,.6);
+  border: 2px solid #000;
+  box-shadow: inset 0 0 0 2px rgba(255,123,230,.35);
+  position: relative;
+}
+
+.fill{
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4fd8, #a7e6ff);
+}
+
+.time{
+  display: flex;
+  gap: 6px;
+  font-size: 18px;
+  opacity: .95;
+}
+
+  
